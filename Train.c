@@ -100,7 +100,6 @@ void assignPlatform()
 void viewPlatforms()
 {
     int i;
- platforms
     printf("\n========== PLATFORM STATUS ==========\n");
 
     for (i = 0; i < PLATFORM; i++)
