@@ -1,35 +1,20 @@
 #include <stdio.h>
 #include <string.h>
-
 #define MAX 20
 #define PLATFORM 3
-
-
-
 struct Train
 {
     int trainNo;
     char name[50];
     char destination[50];
 };
-
-
-
 struct Train queue[MAX];
 
 int front = -1;
 int rear = -1;
-
-
-
-   
-
 struct Train platform[PLATFORM];
 
 int occupied[PLATFORM] = {0};
-
-
-
 void addTrain()
 {
     struct Train t;
@@ -62,10 +47,6 @@ void addTrain()
 
     printf("\nTrain added to waiting queue successfully!\n");
 }
-
-
-
-
 void viewQueue()
 {
     int i;
@@ -88,9 +69,6 @@ void viewQueue()
         printf("-----------------------------\n");
     }
 }
-
-
-
 void assignPlatform()
 {
     int i;
@@ -100,8 +78,6 @@ void assignPlatform()
         printf("\nNo train is waiting.\n");
         return;
     }
-
-
     for (i = 0; i < PLATFORM; i++)
     {
         if (occupied[i] == 0)
@@ -113,25 +89,18 @@ void assignPlatform()
             printf("\nTrain %d assigned to Platform %d.\n",
                    queue[front].trainNo,
                    i + 1);
-
-           
-
             front++;
 
             return;
         }
     }
 
-    printf("\nAll platforms are occupied!\n");
+    printf("\nAll are occupied!\n");
 }
-
-
-
-
 void viewPlatforms()
 {
     int i;
-
+ platforms
     printf("\n========== PLATFORM STATUS ==========\n");
 
     for (i = 0; i < PLATFORM; i++)
@@ -187,9 +156,6 @@ void departTrain()
 
     printf("\nTrain not found on any platform.\n");
 }
-
-
-
 void searchTrain()
 {
     int trainNo;
@@ -251,9 +217,6 @@ void searchTrain()
         printf("\nTrain not found.\n");
     }
 }
-
-
-
 int main()
 {
     int choice;
